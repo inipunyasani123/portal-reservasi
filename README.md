@@ -2,7 +2,7 @@
 
 PortalReservasi: 5 aplikasi booking dengan paradigma berbeda — restoran, hotel, klinik, futsal, dan bioskop.
 
-**Demo live:** https://www.pintuweb.com/website-reservasi
+**Demo live:** https://www.pintuweb.id/website-reservasi
 
 ![Tangkapan layar PortalReservasi](public/og.jpg)
 
@@ -44,4 +44,4 @@ Buka http://localhost:3000. Untuk build produksi: `npm run build` lalu `npm star
 
 ---
 
-Dibuat oleh [PintuWeb](https://www.pintuweb.com), jasa pembuatan website.
+Dibuat oleh [PintuWeb](https://www.pintuweb.id), jasa pembuatan website.
