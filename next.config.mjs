@@ -4,7 +4,7 @@
 const nextConfig = {
   basePath: '/website-reservasi',
   async redirects() {
-    // Alamat lama portal-reservasi-nu.vercel.app di luar basePath -> alamat utama.
+    // Alamat lama portal-reservasi.pintuweb.id di luar basePath -> alamat utama.
     return [
       { source: '/', destination: 'https://www.pintuweb.id/website-reservasi', basePath: false, permanent: true },
       { source: '/:lama((?!website-reservasi(?:/|$)).+)', destination: 'https://www.pintuweb.id/website-reservasi', basePath: false, permanent: true },

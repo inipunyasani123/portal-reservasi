@@ -14,11 +14,11 @@ Katalog aplikasi reservasi. Gaya boarding pass: papan keberangkatan di hero dan 
 
 ## Varian yang dipamerkan (5)
 
-- [Sinema Nusantara](https://reservasi-bioskop.vercel.app)
-- [Arena Futsal Garuda](https://reservasi-futsal.vercel.app)
-- [Senja Bay Resort](https://reservasi-hotel-kappa.vercel.app)
-- [Klinik Sehat Sentosa](https://reservasi-klinik-rose.vercel.app)
-- [Saung Rasa](https://reservasi-restoran-gilt.vercel.app)
+- [Sinema Nusantara](https://reservasi-bioskop.pintuweb.id)
+- [Arena Futsal Garuda](https://reservasi-futsal.pintuweb.id)
+- [Senja Bay Resort](https://reservasi-hotel.pintuweb.id)
+- [Klinik Sehat Sentosa](https://reservasi-klinik.pintuweb.id)
+- [Saung Rasa](https://reservasi-restoran.pintuweb.id)
 
 ## Halaman
 
