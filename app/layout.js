@@ -1,35 +1,41 @@
 import './globals.css';
 import { Barlow_Condensed, Space_Mono } from 'next/font/google';
+import { templates } from './components/templates-data';
 
 const barlow = Barlow_Condensed({ subsets: ['latin'], variable: '--font-barlow', weight: ['600', '700', '800'] });
 const spacemono = Space_Mono({ subsets: ['latin'], variable: '--font-spacemono', weight: ['400', '700'] });
 
 
-const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalReservasi","description":"Koleksi 5 aplikasi booking","url":"https://www.pintuweb.id/website-reservasi","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.id"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PintuWeb","item":"https://www.pintuweb.id"},{"@type":"ListItem","position":2,"name":"Website Reservasi","item":"https://www.pintuweb.id/website-reservasi"}]}};
+// Merek di hasil pencarian & pratinjau tautan = PintuWeb. Jumlah demo dihitung dari data, bukan ditulis tangan.
+const URL_PORTAL = 'https://www.pintuweb.id/website-reservasi';
+const TITLE = `Contoh Website Reservasi: ${templates.length} Demo Siap Coba | PintuWeb`;
+const DESCRIPTION = "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.";
+
+const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":TITLE,"description":DESCRIPTION,"url":URL_PORTAL,"inLanguage":"id-ID","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.id"},"publisher":{"@type":"Organization","name":"PintuWeb","url":"https://www.pintuweb.id"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PintuWeb","item":"https://www.pintuweb.id"},{"@type":"ListItem","position":2,"name":"Website Reservasi","item":URL_PORTAL}]}};
 
 export const metadata = {
-  metadataBase: new URL("https://www.pintuweb.id/website-reservasi"),
-  title: "PortalReservasi — Lima Cara Mengambil Antrian",
-  description: "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.",
-  applicationName: "PortalReservasi",
+  metadataBase: new URL(URL_PORTAL),
+  title: { default: TITLE, template: '%s | PintuWeb' },
+  description: DESCRIPTION,
+  applicationName: "PintuWeb",
   keywords: ["template booking", "aplikasi reservasi", "sistem booking", "koleksi template reservasi"],
-  authors: [{ name: "PortalReservasi" }],
-  creator: "PortalReservasi",
-  publisher: "PortalReservasi",
-  alternates: { canonical: "https://www.pintuweb.id/website-reservasi" },
+  authors: [{ name: "PintuWeb", url: "https://www.pintuweb.id" }],
+  creator: "PintuWeb",
+  publisher: "PintuWeb",
+  alternates: { canonical: URL_PORTAL },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://www.pintuweb.id/website-reservasi",
-    siteName: "PortalReservasi",
-    title: "PortalReservasi — Lima Cara Mengambil Antrian",
-    description: "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.",
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "PortalReservasi — Lima Cara Mengambil Antrian" }],
+    url: URL_PORTAL,
+    siteName: "PintuWeb",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: TITLE }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PortalReservasi — Lima Cara Mengambil Antrian",
-    description: "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["/og.jpg"],
   },
   robots: {

@@ -4,8 +4,9 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Ticket, ArrowDown, ArrowUpRight, MessageCircle, CalendarCheck, LayoutGrid, BellRing, ShieldCheck, BarChart3, Smartphone, ClipboardList, MousePointerClick, CheckCheck, ChevronDown } from 'lucide-react';
 import { templates } from './components/templates-data';
+import { LANJUT, GALERI_LAIN, PINTUWEB } from './components/pintuweb';
 
-const WA = 'https://wa.me/6285190931399?text=Halo%2C%20saya%20tertarik%20aplikasi%20reservasi%20di%20PortalReservasi';
+const WA = 'https://wa.me/6285190931399?text=Halo%2C%20saya%20tertarik%20aplikasi%20reservasi%20di%20PintuWeb';
 
 const FASILITAS = [
   { icon: LayoutGrid, title: 'Denah Interaktif', desc: 'Tamu memilih meja, kursi, atau slot langsung dari denah visual — bukan menebak dari daftar.' },
@@ -48,7 +49,10 @@ export default function PortalReservasi() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <a href="#top" className="flex items-center gap-2 font-display text-xl font-extrabold uppercase tracking-wide">
             <span className="grid h-9 w-9 place-items-center rounded-lg border-2 border-navy bg-oranyer text-navy shadow-[3px_3px_0_var(--color-navy)]"><Ticket size={17} /></span>
-            PortalReservasi
+            <span className="flex flex-col leading-none">
+              PintuWeb{' '}
+              <span className="mt-1 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-oranyer-ink">Website Reservasi</span>
+            </span>
           </a>
           <div className="hidden items-center gap-6 font-display text-xs font-bold uppercase tracking-wide text-mutedr md:flex" role="navigation" aria-label="Navigasi">
             <a href="#tiket" className="transition hover:text-oranyer-ink">Tiket</a>
@@ -266,7 +270,10 @@ export default function PortalReservasi() {
           <div>
             <p className="flex items-center justify-center gap-2 font-display text-lg font-extrabold uppercase tracking-wide text-kremr sm:justify-start">
               <span className="grid h-8 w-8 place-items-center rounded-md bg-oranyer text-navy"><Ticket size={15} /></span>
-              PortalReservasi
+              <span className="flex flex-col text-left leading-none">
+                PintuWeb{' '}
+                <span className="mt-1 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-oranyer">Website Reservasi</span>
+              </span>
             </p>
             <p className="mt-2 text-sm leading-relaxed">Lima paradigma booking untuk restoran, hotel, klinik, futsal, dan bioskop.</p>
           </div>
@@ -287,8 +294,29 @@ export default function PortalReservasi() {
             </ul>
           </div>
         </div>
-        <p className="mt-10 border-t border-kremr/10 pt-5 text-center text-[11px] text-kremr/70">
-          © {new Date().getFullYear()} PortalReservasi · bagian dari PintuWeb — no show, no cry.
+        {/* Lanjut di PintuWeb: harga, layanan, semua demo, dan galeri lain di situs utama */}
+        <nav aria-labelledby="lanjut-pintuweb" className="mx-auto mt-10 max-w-6xl border-t border-kremr/10 pt-8 text-center text-sm sm:text-left">
+          <p id="lanjut-pintuweb" className="font-display text-[11px] font-bold uppercase tracking-[0.25em] text-oranyer">Lanjut di PintuWeb</p>
+          <ul className="mt-4 flex flex-wrap justify-center gap-3 sm:justify-start">
+            {LANJUT.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} className="inline-flex items-center gap-1.5 rounded-md border-2 border-kremr/30 px-3 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-kremr transition hover:border-oranyer hover:bg-oranyer hover:text-navy">
+                  {l.label} <ArrowUpRight size={13} aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 font-display text-[11px] font-bold uppercase tracking-[0.25em] text-kremr/60">Terminal lain</p>
+          <ul className="mt-2 flex flex-wrap justify-center gap-x-5 gap-y-2 sm:justify-start">
+            {GALERI_LAIN.map((g) => (
+              <li key={g.path}>
+                <a href={`${PINTUWEB}/${g.path}`} className="underline decoration-kremr/25 underline-offset-4 transition hover:text-kremr hover:decoration-oranyer">{g.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <p className="mx-auto mt-8 max-w-6xl border-t border-kremr/10 pt-5 text-center text-[11px] text-kremr/70">
+          © {new Date().getFullYear()} PintuWeb · Galeri Website Reservasi — no show, no cry.
         </p>
       </footer>
     </div>
