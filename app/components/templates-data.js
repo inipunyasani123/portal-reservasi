@@ -41,3 +41,6 @@ export const templates = [
     halaman: [['/film', 'Sedang tayang'], ['/film/gerhana-terakhir', 'Detail film'], ['/tiket', 'Tiket saya']],
   },
 ];
+
+/** "https://reservasi-restoran.pintuweb.id" -> "restoran" (sama dengan slug demo di PintuWeb/app/lib/demos.ts). */
+export const slugOf = (t) => new URL(t.url).hostname.split('.')[0].replace(/^reservasi-/, '');

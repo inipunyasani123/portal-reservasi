@@ -1,17 +1,33 @@
 import './globals.css';
 import { Barlow_Condensed, Space_Mono } from 'next/font/google';
-import { templates } from './components/templates-data';
+import { templates, slugOf } from './components/templates-data';
 
-const barlow = Barlow_Condensed({ subsets: ['latin'], variable: '--font-barlow', weight: ['600', '700', '800'] });
+const barlow = Barlow_Condensed({ subsets: ['latin'], variable: '--font-barlow', weight: '800' }); // satu bobot (800) untuk judul, label, dan tombol: hemat dua unduhan font
 const spacemono = Space_Mono({ subsets: ['latin'], variable: '--font-spacemono', weight: ['400', '700'] });
 
 
 // Merek di hasil pencarian & pratinjau tautan = PintuWeb. Jumlah demo dihitung dari data, bukan ditulis tangan.
 const URL_PORTAL = 'https://www.pintuweb.id/website-reservasi';
 const TITLE = `Contoh Website Reservasi: ${templates.length} Demo Siap Coba | PintuWeb`;
-const DESCRIPTION = "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.";
+const DESCRIPTION = "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, kamar hotel, slot dokter, grid lapangan futsal, dan peta kursi bioskop.";
 
-const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":TITLE,"description":DESCRIPTION,"url":URL_PORTAL,"inLanguage":"id-ID","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.id"},"publisher":{"@type":"Organization","name":"PintuWeb","url":"https://www.pintuweb.id"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PintuWeb","item":"https://www.pintuweb.id"},{"@type":"ListItem","position":2,"name":"Website Reservasi","item":URL_PORTAL}]}};
+// CollectionPage + daftar aplikasinya (ItemList) + jejak. Data dari templates-data, jadi ikut bertambah sendiri.
+const __jsonld = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: TITLE,
+  description: DESCRIPTION,
+  url: URL_PORTAL,
+  inLanguage: "id-ID",
+  isPartOf: { "@type": "WebSite", name: "PintuWeb", url: "https://www.pintuweb.id" },
+  publisher: { "@type": "Organization", name: "PintuWeb", url: "https://www.pintuweb.id" },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: templates.length,
+    itemListElement: templates.map((t, i) => ({ "@type": "ListItem", position: i + 1, name: `${t.merek} — ${t.paradigma}`, url: t.url })),
+  },
+  breadcrumb: { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "PintuWeb", item: "https://www.pintuweb.id" }, { "@type": "ListItem", position: 2, name: "Website Reservasi", item: URL_PORTAL }] },
+};
 
 export const metadata = {
   metadataBase: new URL(URL_PORTAL),
@@ -49,9 +65,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`${barlow.variable} ${spacemono.variable}`}>
       <body className="antialiased">
-        <main>{children}</main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(__jsonld) }} />
-        </body>
+        {children}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(__jsonld) }} />
+      </body>
     </html>
   );
 }

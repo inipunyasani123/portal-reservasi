@@ -8,7 +8,7 @@
   --color-kremr: #f4efe6;
   --color-oranyer: #ff7a1a;
   --color-oranyer-ink: #b8380a;
-  --color-mutedr: #5f6b81;
+  --color-mutedr: #535f74;
 }
 
 html { scroll-behavior: smooth; }
@@ -21,6 +21,15 @@ body {
 }
 
 h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0.01em; }
+
+/* Tautan lompat ke konten: tersembunyi sampai difokus papan ketik */
+.lewati {
+  position: fixed; left: 1rem; top: 0.75rem; z-index: 60; transform: translateY(-160%);
+  border: 2px solid var(--color-navy); border-radius: 0.5rem; background: var(--color-oranyer); color: var(--color-navy);
+  padding: 0.5rem 1rem; font-weight: 700; font-size: 0.875rem; box-shadow: 3px 3px 0 var(--color-navy);
+}
+.lewati:focus { transform: none; }
+main:focus { outline: none; }
 
 /* Tiket dengan takik samping (perforasi) */
 .tiket {
@@ -42,10 +51,26 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0.01em; }
 /* Papan flip (departure board) */
 .board { background: var(--color-navy); color: var(--color-kremr); letter-spacing: 0.12em; }
 
-@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-.rise { animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+/* Masuk halus untuk elemen pendukung hero (judul tetap langsung tampil demi LCP) */
+@keyframes naik { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.naik { animation: naik 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.naik-2 { animation-delay: 0.12s; }
 
-@keyframes blinkr { 0%, 60% { opacity: 1; } 61%, 100% { opacity: 0.2; } }
-.blinkr { animation: blinkr 1.2s steps(1) infinite; }
+/* Baris papan keberangkatan muncul satu per satu seperti papan flip */
+@keyframes balik { from { opacity: 0; transform: rotateX(-70deg); } to { opacity: 1; transform: none; } }
+.baris { animation: balik 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; transform-origin: top; }
 
-:focus-visible { outline: 3px solid var(--color-oranyer); outline-offset: 3px; border-radius: 10px; }
+/* FAQ <details>: buka-tutup halus di peramban yang mendukung */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  .tanya::details-content { height: 0; overflow: clip; transition: height 0.3s ease, content-visibility 0.3s allow-discrete; }
+  .tanya[open]::details-content { height: auto; }
+}
+
+:focus-visible { outline: 3px solid var(--color-oranyer-ink); outline-offset: 3px; }
+.board :focus-visible, footer :focus-visible { outline-color: var(--color-oranyer); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

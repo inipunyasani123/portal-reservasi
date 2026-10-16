@@ -2,6 +2,22 @@
 // semua tautan ke situs utama memakai URL absolut dan <a> biasa: next/link akan menempelkan basePath.
 export const PINTUWEB = 'https://www.pintuweb.id';
 
+/** Kontak dari PintuWeb/app/lib/site.ts (WA_NUMBER, WA_DISPLAY). Ganti di sana = ganti di sini. */
+export const WA_NUMBER = '6285190931399';
+export const WA_DISPLAY = '+62 851 9093 1399';
+export const wa = (teks) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(teks)}`;
+
+/**
+ * Angka paket "sistem-reservasi" dari PintuWeb/app/lib/packages.ts (harga, waktu).
+ * Satu-satunya tempat angka bisnis di portal ini: hero dan FAQ mengambil dari sini.
+ */
+export const PAKET = {
+  nama: 'Sistem Reservasi Online',
+  mulai: 'Rp2,5 juta',
+  sampai: 'Rp6 juta',
+  waktu: '1–2 minggu',
+};
+
 /** Delapan galeri yang tayang di www.pintuweb.id/<path> (lihat lib/portals.ts di PintuWeb). */
 export const GALERI = [
   { path: 'landing-page', label: 'Landing Page' },
