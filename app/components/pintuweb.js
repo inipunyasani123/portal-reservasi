@@ -13,8 +13,8 @@ export const wa = (teks) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponen
  */
 export const PAKET = {
   nama: 'Sistem Reservasi Online',
-  mulai: 'Rp2,5 juta',
-  sampai: 'Rp6 juta',
+  mulai: 'Rp1,5 juta',
+  sampai: 'Rp5 juta',
   waktu: '1–2 minggu',
 };
 
