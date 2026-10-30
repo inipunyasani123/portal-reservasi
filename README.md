@@ -18,7 +18,7 @@ Slug kartu = alamat tautan langsung (`/website-reservasi#<slug>`); gulir ke kart
 
 - `restoran`: [Pawon Lirih](https://reservasi-restoran.pintuweb.id), denah meja
 - `hotel`: [Tanjung Lengkung](https://reservasi-hotel.pintuweb.id), check-in/check-out
-- `klinik`: [Klinik Rumpun Waras](https://reservasi-klinik.pintuweb.id), slot dokter (tangkapan sengaja memotong daftar dokter berwajah kartun)
+- `klinik`: [Klinik Rumpun Waras](https://reservasi-klinik.pintuweb.id), slot dokter (tangkapan penuh; potret dokter berwajah polos)
 - `futsal`: [Gelanggang Petang](https://reservasi-futsal.pintuweb.id), grid jam x lapangan
 - `bioskop`: [Bioskop Kelir](https://reservasi-bioskop.pintuweb.id), peta kursi
 
