@@ -1,10 +1,15 @@
+import HARGA from './harga.json';
 // Tautan ke situs utama PintuWeb. Portal ini zona terpisah (basePath /website-reservasi) di domain yang sama, jadi
 // semua tautan ke situs utama memakai URL absolut dan <a> biasa: next/link akan menempelkan basePath.
+/** Harga & kontak dibaca dari ./harga.json (salinan https://www.pintuweb.id/harga.json, diambil scripts/ambil-harga.mjs saat build). */
+const P = (slug) => HARGA.paket[slug];
+const rp = (n) => (n >= 1e6 ? `Rp${String(n / 1e6).replace('.', ',')} juta` : `Rp${n / 1e3} ribu`);
+
 export const PINTUWEB = 'https://www.pintuweb.id';
 
 /** Kontak dari PintuWeb/app/lib/site.ts (WA_NUMBER, WA_DISPLAY). Ganti di sana = ganti di sini. */
-export const WA_NUMBER = '6285190931399';
-export const WA_DISPLAY = '+62 851 9093 1399';
+export const WA_NUMBER = HARGA.wa.nomor;
+export const WA_DISPLAY = HARGA.wa.tampil;
 export const wa = (teks) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(teks)}`;
 
 /**
@@ -13,9 +18,9 @@ export const wa = (teks) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponen
  */
 export const PAKET = {
   nama: 'Sistem Reservasi Online',
-  mulai: 'Rp1,5 juta',
-  sampai: 'Rp5 juta',
-  waktu: '1–2 minggu',
+  mulai: rp(P('sistem-reservasi').mulai),
+  sampai: rp(P('sistem-reservasi').sampai),
+  waktu: P('sistem-reservasi').waktu,
 };
 
 /** Galeri yang tayang di www.pintuweb.id/<path> (lihat lib/portals.ts di PintuWeb). Urutan dan label sama di semua portal. */
