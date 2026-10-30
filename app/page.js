@@ -193,7 +193,7 @@ export default function PortalReservasi() {
                         </picture>
                       </div>
                     </a>
-                    <span className="pointer-events-none absolute left-3 top-3 rounded-md border-2 border-navy bg-oranyer px-2.5 py-1 font-display text-xs font-bold uppercase text-navy sm:left-4 sm:top-4" aria-hidden="true">{t.emoji} {t.name}</span>
+                    <span className="pointer-events-none absolute bottom-3 left-3 rounded-md border-2 border-navy bg-oranyer px-2.5 py-1 font-display text-xs font-bold uppercase text-navy md:bottom-auto md:left-4 md:top-4" aria-hidden="true">{t.emoji} {t.name}</span>
                   </div>
 
                   {/* Stub tiket */}
