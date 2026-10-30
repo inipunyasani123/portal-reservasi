@@ -9,7 +9,7 @@ const spacemono = Space_Mono({ subsets: ['latin'], variable: '--font-spacemono',
 // Merek di hasil pencarian & pratinjau tautan = PintuWeb. Jumlah demo dihitung dari data, bukan ditulis tangan.
 const URL_PORTAL = 'https://www.pintuweb.id/website-reservasi';
 const TITLE = `Contoh Website Reservasi: ${templates.length} Demo Siap Coba | PintuWeb`;
-const DESCRIPTION = "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, kamar hotel, slot dokter, grid lapangan futsal, dan peta kursi bioskop.";
+const DESCRIPTION = "Contoh website reservasi online: pesan meja restoran, kamar hotel, jam dokter, lapangan futsal, dan kursi bioskop. Bisa dicoba.";
 
 // CollectionPage + daftar aplikasinya (ItemList) + jejak. Data dari templates-data, jadi ikut bertambah sendiri.
 const __jsonld = {

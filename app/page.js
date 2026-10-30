@@ -16,39 +16,37 @@ function gambarKartu(t, slug) {
 const N = templates.length;
 
 const FASILITAS = [
-  { icon: LayoutGrid, title: 'Denah Interaktif', desc: 'Tamu memilih meja, kursi, atau slot langsung dari denah visual — bukan menebak dari daftar.' },
-  { icon: CalendarCheck, title: 'Jam sesuai WIB', desc: 'Tanggal dan jam dihitung di perangkat tamu dalam WIB; slot yang sudah lewat otomatis tertutup.' },
-  { icon: BellRing, title: 'Konfirmasi dengan kode', desc: 'Setiap pesanan mendapat kode dan ringkasan. Saat dipasang, ringkasan itu bisa diteruskan ke WhatsApp atau email usahamu.' },
-  { icon: ShieldCheck, title: 'Aturan usaha', desc: 'Hari libur, hari praktik, tarif akhir pekan, batas kursi per transaksi — semuanya aturan di data, bukan hiasan.' },
-  { icon: BarChart3, title: 'Halaman "punya saya"', desc: 'Tamu melihat dan membatalkan pesanannya sendiri, lengkap dengan batas batal gratis.' },
-  { icon: Smartphone, title: 'Ramah ponsel', desc: 'Diuji di lebar 360 px — denah, grid jadwal, dan peta kursi tetap bisa dipakai.' },
+  { icon: LayoutGrid, title: 'Pilih langsung', desc: 'Tamu tinggal klik meja, kursi, atau jam yang masih kosong.' },
+  { icon: CalendarCheck, title: 'Jam sudah pas', desc: 'Pakai jam WIB. Jam yang sudah lewat otomatis tertutup.' },
+  { icon: BellRing, title: 'Ada kode pesanan', desc: 'Pesanan masuk ke WhatsApp atau email usahamu.' },
+  { icon: ShieldCheck, title: 'Ikut aturan usahamu', desc: 'Hari libur, tarif akhir pekan, dan batas pesan bisa diatur.' },
+  { icon: BarChart3, title: 'Cek pesanan sendiri', desc: 'Tamu bisa melihat dan membatalkan pesanannya.' },
+  { icon: Smartphone, title: 'Enak dibuka di HP', desc: 'Tamu bisa memesan dari ponsel tanpa pasang aplikasi.' },
 ];
 
 const BOARDING = [
-  { icon: ClipboardList, no: 'GATE 1', title: 'Check-In Kebutuhan', desc: 'Restoran? Klinik? Futsal? Ceritakan alur booking usahamu.' },
-  { icon: MousePointerClick, no: 'GATE 2', title: 'Pilih Paradigma', desc: `${N === 5 ? 'Lima' : N} pola teruji — pilih yang paling cocok dengan operasionalmu.` },
-  { icon: CheckCheck, no: 'GATE 3', title: 'Kustomisasi', desc: 'Menu, jam buka, denah, dan branding kami sesuaikan.' },
-  { icon: Ticket, no: 'GATE 4', title: 'Boarding', desc: 'Sistem live — pelangganmu mulai reservasi hari itu juga.' },
+  { icon: ClipboardList, no: 'GATE 1', title: 'Ceritakan usahamu', desc: 'Restoran, klinik, atau futsal? Kasih tahu cara pelangganmu memesan.' },
+  { icon: MousePointerClick, no: 'GATE 2', title: 'Pilih contoh', desc: 'Pilih yang paling mirip dengan usahamu.' },
+  { icon: CheckCheck, no: 'GATE 3', title: 'Kami sesuaikan', desc: 'Menu, jam buka, dan tampilan kami atur.' },
+  { icon: Ticket, no: 'GATE 4', title: 'Siap dipakai', desc: 'Pelangganmu bisa langsung memesan.' },
 ];
 
 const INFO = [
-  { q: 'Apa bedanya kelima demo ini?', a: 'Masing-masing memakai cara memilih yang berbeda: denah meja untuk restoran, kalender check-in dan check-out untuk hotel, slot jam dokter untuk klinik, grid jam dan lapangan untuk futsal, serta peta kursi untuk bioskop. Pilih yang paling mirip dengan cara pelangganmu memesan sekarang.' },
-  { q: 'Apakah reservasi masuk ke WhatsApp saya?', a: 'Di demo, pesanan hanya disimpan di peramban pengunjung — tidak ada yang dikirim. Saat dipasang untuk usahamu, kami sambungkan ke WhatsApp, email, atau basis data supaya setiap pesanan sampai ke kamu.' },
-  { q: 'Berapa biaya membuat sistem reservasi seperti ini?', a: `Paket ${PAKET.nama} PintuWeb ${PAKET.mulai}–${PAKET.sampai}, dikerjakan ${PAKET.waktu}: kalender & slot ketersediaan, konfirmasi lewat WhatsApp/email, dashboard admin, dan opsi DP online. Angka pastinya tertulis di penawaran sebelum mulai.` },
-  { q: 'Bagaimana mencegah dobel booking?', a: 'Di demo, slot yang sudah terisi tertutup di perangkat yang sama. Versi terpasang memakai basis data bersama, jadi slot yang diambil satu tamu langsung tertutup untuk semua tamu.' },
-  { q: 'Bisakah jam operasional dan kapasitas diatur?', a: 'Bisa penuh: hari libur, jam buka-tutup, jumlah meja/kamar/lapangan, hingga durasi per sesi — semua mengikuti aturan usahamu.' },
-  { q: 'Berapa lama pengerjaannya?', a: `Paket ${PAKET.nama} dikerjakan ${PAKET.waktu}, tergantung seberapa banyak aturan khusus yang harus dimasukkan. Lamanya dan angka pasti dicantumkan di penawaran sebelum pengerjaan dimulai.` },
-  { q: 'Apakah demo ini bisa dibuka di ponsel?', a: 'Bisa. Denah meja, grid jadwal, dan peta kursi diuji di lebar layar 360 px, jadi pelangganmu bisa memesan dari ponsel tanpa memasang aplikasi.' },
-  { q: 'Usaha saya tidak ada di lima kategori itu — tetap bisa?', a: 'Tetap bisa. Lima template ini adalah paradigma (denah, kalender, antrian, grid jadwal, kursi). Hampir semua bisnis booking cocok dengan salah satunya — kami sesuaikan istilah dan alurnya.' },
+  { q: 'Apa bedanya kelima contoh ini?', a: 'Cara memilihnya beda: meja untuk restoran, tanggal untuk hotel, jam untuk klinik dan futsal, kursi untuk bioskop. Pilih yang paling mirip usahamu.' },
+  { q: 'Apakah pesanan masuk ke WhatsApp saya?', a: 'Di contoh ini belum, karena hanya untuk dicoba. Di website milikmu, pesanan kami sambungkan ke WhatsApp atau email.' },
+  { q: 'Berapa biayanya?', a: `Paket ${PAKET.nama} mulai ${PAKET.mulai} sampai ${PAKET.sampai}. Harga pasti ada di penawaran sebelum mulai.` },
+  { q: 'Berapa lama pengerjaannya?', a: `Sekitar ${PAKET.waktu}, tergantung aturan khusus usahamu.` },
+  { q: 'Bisa dibuka di HP?', a: 'Bisa. Pelangganmu bisa memesan dari ponsel tanpa pasang aplikasi.' },
+  { q: 'Jam buka dan jumlah meja bisa diatur?', a: 'Bisa. Hari libur, jam buka, jumlah meja atau kamar, dan lama pesan mengikuti usahamu.' },
 ];
 
-// Panduan memilih: tiap paradigma dipetakan ke jenis usaha. Isi dari perilaku demo, bukan klaim angka.
+// Panduan memilih: tiap pola dipetakan ke jenis usaha.
 const PANDUAN = [
-  { kode: 'RSV-001', pola: 'Denah meja', cocok: 'Restoran, kafe, rumah makan, dan tempat makan yang menahan meja per jam.', logika: 'Tamu memilih tanggal, jam datang, dan jumlah tamu, lalu mengeklik meja yang masih kosong di denah. Zona dan kapasitas meja dicek; satu pesanan menahan meja selama 90 menit.' },
-  { kode: 'RSV-002', pola: 'Kalender menginap', cocok: 'Hotel kecil, vila, homestay, dan penginapan yang menjual kamar per malam.', logika: 'Ketersediaan dihitung per malam dari tanggal check-in sampai check-out, dengan tarif akhir pekan terpisah dan rincian pajak serta layanan sebelum tamu memesan.' },
-  { kode: 'RSV-003', pola: 'Slot jam praktik', cocok: 'Klinik, dokter praktik mandiri, salon, barbershop, dan jasa lain yang melayani satu orang per slot.', logika: 'Tamu memilih dokter, tanggal di hari praktiknya, lalu slot 30 menit yang kosong. Setelah memesan ia mendapat nomor urut dan daftar persiapan.' },
-  { kode: 'RSV-004', pola: 'Grid jam × lapangan', cocok: 'Lapangan futsal, badminton, studio, ruang rapat, dan sewa fasilitas per jam.', logika: 'Baris adalah jam, kolom adalah lapangan. Harga sore, jam emas, dan malam tampil di tiap kotak, dan pemesan bisa mengambil beberapa jam berurutan sekaligus.' },
-  { kode: 'RSV-005', pola: 'Peta kursi', cocok: 'Bioskop kecil, teater, ruang pertunjukan, dan acara dengan tempat duduk bernomor.', logika: 'Program tayang harian disusun tanpa jam bertumpuk. Setelah memilih film dan jam, pemesan memilih kursi baris demi baris dari denah studio.' },
+  { kode: 'RSV-001', pola: 'Pilih meja', cocok: 'Restoran, kafe, dan rumah makan.', logika: 'Tamu klik meja kosong di denah.' },
+  { kode: 'RSV-002', pola: 'Pilih tanggal menginap', cocok: 'Hotel kecil, vila, dan homestay.', logika: 'Tamu pilih tanggal masuk dan keluar.' },
+  { kode: 'RSV-003', pola: 'Pilih jam', cocok: 'Klinik, salon, dan barbershop.', logika: 'Tamu pilih jam yang kosong, lalu dapat nomor antrean.' },
+  { kode: 'RSV-004', pola: 'Pilih jam dan lapangan', cocok: 'Futsal, badminton, studio, dan ruang rapat.', logika: 'Tamu sewa per jam dan bisa ambil beberapa jam.' },
+  { kode: 'RSV-005', pola: 'Pilih kursi', cocok: 'Bioskop kecil, teater, dan acara bertempat duduk.', logika: 'Tamu pilih film, jam, lalu kursi.' },
 ];
 
 const FAQ_LD = {
@@ -95,11 +93,11 @@ export default function PortalReservasi() {
             <Logo />
           </a>
           <nav aria-label="Navigasi halaman" className="hidden items-center gap-6 font-display text-xs font-bold uppercase tracking-wide text-mutedr md:flex">
-            <a href="#tiket" className="transition hover:text-oranyer-ink">Tiket</a>
-            <a href="#panduan" className="transition hover:text-oranyer-ink">Pilih Pola</a>
-            <a href="#fasilitas" className="transition hover:text-oranyer-ink">Fasilitas</a>
-            <a href="#boarding" className="transition hover:text-oranyer-ink">Alur</a>
-            <a href="#info" className="transition hover:text-oranyer-ink">Informasi</a>
+            <a href="#tiket" className="transition hover:text-oranyer-ink">Contoh</a>
+            <a href="#panduan" className="transition hover:text-oranyer-ink">Pilih Contoh</a>
+            <a href="#fasilitas" className="transition hover:text-oranyer-ink">Fitur</a>
+            <a href="#boarding" className="transition hover:text-oranyer-ink">Cara Pesan</a>
+            <a href="#info" className="transition hover:text-oranyer-ink">Tanya Jawab</a>
           </nav>
           <a href={WA} target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-lg border-2 border-navy bg-navy px-3 py-2 font-display text-[13px] font-bold uppercase tracking-wide text-kremr transition hover:bg-oranyer-ink sm:px-5 sm:text-sm">
             Pesan sistem booking<span className="sr-only"> lewat WhatsApp (tab baru)</span>
@@ -113,13 +111,13 @@ export default function PortalReservasi() {
           <div className="mx-auto max-w-6xl">
             <div className="text-center">
               <span className="naik inline-block rounded-full border-2 border-navy bg-white px-4 py-1.5 text-xs font-bold shadow-[3px_3px_0_var(--color-navy)]">
-                {N} aplikasi · {N} paradigma booking
+                {N} contoh · bisa dicoba
               </span>
               <h1 className="mt-4 font-display text-[2.3rem] font-extrabold uppercase leading-[0.95] sm:mt-6 sm:text-7xl">
                 Antri itu <span className="text-oranyer-ink">kuno</span>.<br />Reservasi itu <span className="text-oranyer-ink">sekarang</span>.
               </h1>
               <p className="mx-auto mt-5 hidden max-w-xl text-sm sm:block leading-relaxed text-mutedr">
-                Meja restoran, kamar hotel, janji dokter, lapangan futsal, sampai kursi bioskop — lima cara booking, masing-masing dengan halaman dalam yang bisa dicoba.
+                Pesan meja, kamar, jam dokter, lapangan, atau kursi bioskop. Semuanya bisa kamu coba.
               </p>
             </div>
 
@@ -175,7 +173,7 @@ export default function PortalReservasi() {
         </section>
 
         {/* Tiket */}
-        <section id="tiket" aria-label="Lima aplikasi reservasi" className="scroll-mt-[62px] px-4 pb-16 sm:px-6 sm:pb-20">
+        <section id="tiket" aria-label="Contoh website reservasi" className="scroll-mt-[62px] px-4 pb-16 sm:px-6 sm:pb-20">
           <ul className="mx-auto max-w-6xl space-y-8 sm:space-y-10">
             {templates.map((t) => {
               const slug = slugOf(t);
@@ -232,7 +230,7 @@ export default function PortalReservasi() {
                         <a href={t.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-navy px-4 font-display text-xs font-bold uppercase tracking-wide text-kremr transition hover:bg-oranyer-ink">
                           Coba demo<span className="sr-only"> {t.merek} (tab baru)</span> <ArrowUpRight size={13} aria-hidden="true" />
                         </a>
-                        <a href={wa(`Halo PintuWeb, saya tertarik ${JENIS} seperti contoh ${t.merek} (${t.url}). Boleh minta info?`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center rounded-lg border-2 border-navy px-4 font-display text-xs font-bold uppercase tracking-wide text-navy transition hover:bg-navy hover:text-kremr">
+                        <a href={wa(`Halo PintuWeb, saya mau ${JENIS} seperti contoh ${t.merek} (${t.url}). Boleh minta info?`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center rounded-lg border-2 border-navy px-4 font-display text-xs font-bold uppercase tracking-wide text-navy transition hover:bg-navy hover:text-kremr">
                           Pesan yang mirip<span className="sr-only"> dengan {t.merek} lewat WhatsApp (tab baru)</span>
                         </a>
                       </div>
@@ -248,16 +246,15 @@ export default function PortalReservasi() {
         <section id="panduan" aria-labelledby="judul-panduan" className="scroll-mt-[62px] border-t-2 border-navy px-4 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto max-w-6xl">
             <div className="sm:text-center">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer-ink">Pilih Gerbang</p>
-              <h2 id="judul-panduan" className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Usahamu cocok dengan <span className="text-oranyer-ink">pola yang mana</span></h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-mutedr sm:mx-auto">Sistem reservasi online pada dasarnya menjawab satu pertanyaan: apa yang dipesan pelanggan, dan kapan ia boleh dipesan. Lima demo di atas menjawabnya dengan lima cara. Ini peta singkat untuk memilihnya.</p>
+              <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer-ink">Pilih yang Cocok</p>
+              <h2 id="judul-panduan" className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Usahamu cocok yang <span className="text-oranyer-ink">mana?</span></h2>
             </div>
             <dl className="mt-8 grid gap-4 sm:mt-10 md:grid-cols-2 lg:grid-cols-3">
               {PANDUAN.map((p) => (
                 <div key={p.kode} className="rounded-xl border-2 border-navy bg-white p-5 shadow-[4px_4px_0_rgba(16,32,63,0.15)]">
                   <dt className="font-display text-xl font-extrabold uppercase leading-tight"><span className="block font-mono text-[10px] font-bold tracking-[0.15em] text-mutedr">{p.kode}</span>{p.pola}</dt>
                   <dd className="mt-2 text-[13px] leading-relaxed text-mutedr"><strong className="text-navy">Cocok untuk:</strong> {p.cocok}</dd>
-                  <dd className="mt-2 text-[13px] leading-relaxed text-mutedr"><strong className="text-navy">Cara kerjanya:</strong> {p.logika}</dd>
+                  <dd className="mt-2 text-[13px] leading-relaxed text-mutedr"><strong className="text-navy">Cara kerja:</strong> {p.logika}</dd>
                 </div>
               ))}
             </dl>
@@ -268,9 +265,9 @@ export default function PortalReservasi() {
         <section id="fasilitas" aria-labelledby="judul-fasilitas" className="scroll-mt-[62px] border-t-2 border-navy bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="sm:text-center">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer-ink">Fasilitas Terminal</p>
-              <h2 id="judul-fasilitas" className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Semua penerbangan <span className="text-oranyer-ink">full service</span></h2>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-mutedr sm:mx-auto sm:mt-4">Apapun paradigma yang kamu pilih, fitur intinya sama lengkap.</p>
+              <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer-ink">Fitur</p>
+              <h2 id="judul-fasilitas" className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Fitur yang <span className="text-oranyer-ink">kamu dapat</span></h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-mutedr sm:mx-auto sm:mt-4">Semua contoh punya fitur ini.</p>
             </div>
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
               {FASILITAS.map((f) => (
@@ -290,8 +287,8 @@ export default function PortalReservasi() {
         <section id="boarding" aria-labelledby="judul-boarding" className="scroll-mt-[62px] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="sm:text-center">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer-ink">Alur Boarding</p>
-              <h2 id="judul-boarding" className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Empat gerbang menuju <span className="text-oranyer-ink">lepas landas</span></h2>
+              <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer-ink">Cara Pesan</p>
+              <h2 id="judul-boarding" className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Empat langkah <span className="text-oranyer-ink">mudah</span></h2>
             </div>
             <ol className="relative mt-8 grid grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
               <span className="absolute left-0 right-0 top-7 hidden border-t-2 border-dashed border-navy/30 lg:block" aria-hidden="true" />
@@ -314,8 +311,8 @@ export default function PortalReservasi() {
         <section id="info" aria-labelledby="judul-info" className="scroll-mt-[62px] border-t-2 border-navy bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-3xl">
             <div className="sm:text-center">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer-ink">Pusat Informasi</p>
-              <h2 id="judul-info" className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Sebelum <span className="text-oranyer-ink">take-off</span></h2>
+              <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer-ink">Tanya Jawab</p>
+              <h2 id="judul-info" className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Yang sering <span className="text-oranyer-ink">ditanya</span></h2>
             </div>
             <div className="mt-8 space-y-3 sm:mt-10 sm:space-y-4">
               {INFO.map((t, i) => (
@@ -339,8 +336,8 @@ export default function PortalReservasi() {
         <section className="board border-t-2 border-navy px-4 py-16 text-center sm:px-6">
           <div className="mx-auto max-w-xl">
             <p className="text-xs uppercase tracking-[0.3em] text-oranyer">Now boarding</p>
-            <h2 className="mt-3 font-display text-4xl font-extrabold uppercase leading-tight md:text-5xl">Bisnismu berikutnya yang dipanggil</h2>
-            <p className="mt-4 text-sm text-kremr/80">Sistem reservasi untuk usahamu — mulai dari salah satu paradigma ini.</p>
+            <h2 className="mt-3 font-display text-4xl font-extrabold uppercase leading-tight md:text-5xl">Siap terima pesanan online?</h2>
+            <p className="mt-4 text-sm text-kremr/80">Ceritakan usahamu, kami bantu buatkan.</p>
             <a href={WA} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-lg bg-oranyer px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-navy transition hover:scale-[1.03] active:scale-95">
               <MessageCircle size={16} aria-hidden="true" /> Chat WhatsApp
             </a>
@@ -352,15 +349,15 @@ export default function PortalReservasi() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3">
           <div className="col-span-2 sm:col-span-1">
             <p className="flex items-center gap-2 font-display text-lg font-extrabold uppercase tracking-wide text-kremr"><Logo kecil /></p>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed">Lima paradigma booking untuk restoran, hotel, klinik, futsal, dan bioskop.</p>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed">Contoh website reservasi untuk restoran, hotel, klinik, futsal, dan bioskop.</p>
           </div>
           <nav aria-labelledby="kaki-terminal" className="text-sm">
-            <p id="kaki-terminal" className="font-display text-[11px] font-bold uppercase tracking-[0.25em] text-oranyer">Terminal</p>
+            <p id="kaki-terminal" className="font-display text-[11px] font-bold uppercase tracking-[0.25em] text-oranyer">Menu</p>
             <ul className="mt-3 space-y-1">
-              <li><a href="#tiket" className="inline-block py-1 transition hover:text-kremr">Koleksi Tiket</a></li>
-              <li><a href="#fasilitas" className="inline-block py-1 transition hover:text-kremr">Fasilitas</a></li>
-              <li><a href="#boarding" className="inline-block py-1 transition hover:text-kremr">Alur Boarding</a></li>
-              <li><a href="#info" className="inline-block py-1 transition hover:text-kremr">Pusat Informasi</a></li>
+              <li><a href="#tiket" className="inline-block py-1 transition hover:text-kremr">Semua Contoh</a></li>
+              <li><a href="#fasilitas" className="inline-block py-1 transition hover:text-kremr">Fitur</a></li>
+              <li><a href="#boarding" className="inline-block py-1 transition hover:text-kremr">Cara Pesan</a></li>
+              <li><a href="#info" className="inline-block py-1 transition hover:text-kremr">Tanya Jawab</a></li>
             </ul>
           </nav>
           <div className="text-sm">
@@ -389,7 +386,7 @@ export default function PortalReservasi() {
               <li key={l.href}><a href={l.href} className="inline-flex min-h-9 items-center gap-1 underline decoration-kremr/25 underline-offset-4 transition hover:text-kremr hover:decoration-oranyer">{l.label} <ArrowUpRight size={13} aria-hidden="true" /></a></li>
             ))}
           </ul>
-          <p className="mt-6 font-display text-[11px] font-bold uppercase tracking-[0.25em] text-kremr/70">Terminal lain</p>
+          <p className="mt-6 font-display text-[11px] font-bold uppercase tracking-[0.25em] text-kremr/70">Galeri lain</p>
           <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1">
             {GALERI_LAIN.map((g) => (
               <li key={g.path}>
@@ -399,7 +396,7 @@ export default function PortalReservasi() {
           </ul>
         </nav>
         <p className="mx-auto mt-8 max-w-6xl border-t border-kremr/10 pt-5 text-[11px] text-kremr/70 sm:text-center">
-          © {new Date().getFullYear()} PintuWeb · Galeri Website Reservasi — no show, no cry.
+          © {new Date().getFullYear()} PintuWeb · Galeri Website Reservasi
         </p>
       </footer>
       <BilahLengket waHref={WA} />
