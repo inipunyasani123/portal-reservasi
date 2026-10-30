@@ -14,11 +14,15 @@ Katalog aplikasi reservasi. Gaya boarding pass: papan keberangkatan di hero dan 
 
 ## Varian yang dipamerkan (5)
 
-- [Sinema Nusantara](https://reservasi-bioskop.pintuweb.id)
-- [Arena Futsal Garuda](https://reservasi-futsal.pintuweb.id)
-- [Senja Bay Resort](https://reservasi-hotel.pintuweb.id)
-- [Klinik Sehat Sentosa](https://reservasi-klinik.pintuweb.id)
-- [Saung Rasa](https://reservasi-restoran.pintuweb.id)
+Slug kartu = alamat tautan langsung (`/website-reservasi#<slug>`); gulir ke kartu, sorot cincin oranye ±2 detik.
+
+- `restoran`: [Pawon Lirih](https://reservasi-restoran.pintuweb.id), denah meja
+- `hotel`: [Tanjung Lengkung](https://reservasi-hotel.pintuweb.id), check-in/check-out
+- `klinik`: [Klinik Rumpun Waras](https://reservasi-klinik.pintuweb.id), slot dokter (tangkapan sengaja memotong daftar dokter berwajah kartun)
+- `futsal`: [Gelanggang Petang](https://reservasi-futsal.pintuweb.id), grid jam x lapangan
+- `bioskop`: [Bioskop Kelir](https://reservasi-bioskop.pintuweb.id), peta kursi
+
+Gambar kartu: `public/images/rsv/<slug>.webp` (desktop 1600x1000) dan `<slug>-m.webp` (potret ponsel 780x1688, dipakai < 768 px lewat `<picture>`). Varian lebar dibuat `node scripts/gambar-varian.mjs`; untuk berkas `-m` hapus varian 800/960/1280 (sama dengan aslinya). Sumber tangkapan: `public/images/SUMBER.md`.
 
 ## Halaman
 

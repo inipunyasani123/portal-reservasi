@@ -75,3 +75,13 @@ main:focus { outline: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+/* Tautan langsung #slug: kartu yang dituju diberi cincin oranye ±2 detik (tanpa kedip) */
+.tiket { transition: outline-color 0.4s ease; outline: 4px solid transparent; outline-offset: 6px; }
+.tiket[data-sorot] { outline-color: var(--color-oranyer); }
+@media (max-width: 767px) { html { scroll-padding-bottom: 5rem; } }
+
+/* Strip demo geser di hero ponsel */
+.strip { scroll-padding-inline: 1rem; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.strip::-webkit-scrollbar { display: none; }
+.strip > li { scroll-snap-align: start; }

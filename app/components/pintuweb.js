@@ -18,19 +18,19 @@ export const PAKET = {
   waktu: '1–2 minggu',
 };
 
-/** Galeri yang tayang di www.pintuweb.id/<path> (lihat lib/portals.ts di PintuWeb). */
+/** Galeri yang tayang di www.pintuweb.id/<path> (lihat lib/portals.ts di PintuWeb). Urutan dan label sama di semua portal. */
 export const GALERI = [
   { path: 'landing-page', label: 'Landing Page' },
-  { path: 'link-in-bio', label: 'Link in Bio' },
-  { path: 'kontes-desain', label: 'Kontes Desain' },
-  { path: 'undangan-digital', label: 'Undangan Digital' },
-  { path: 'website-portofolio', label: 'Website Portofolio' },
-  { path: 'website-reservasi', label: 'Website Reservasi' },
-  { path: 'website-properti', label: 'Website Properti' },
-  { path: 'aplikasi-to-do', label: 'Aplikasi To-Do' },
   { path: 'toko-online', label: 'Toko Online' },
-  { path: 'menu-digital', label: 'Menu Digital' },
   { path: 'aplikasi-mobile', label: 'Aplikasi Mobile' },
+  { path: 'menu-digital', label: 'Menu Digital' },
+  { path: 'link-in-bio', label: 'Link in Bio' },
+  { path: 'kontes-desain', label: 'Konsep Desain' },
+  { path: 'undangan-digital', label: 'Undangan Digital' },
+  { path: 'website-portofolio', label: 'Portofolio Pribadi' },
+  { path: 'website-reservasi', label: 'Reservasi & Booking' },
+  { path: 'website-properti', label: 'Properti' },
+  { path: 'aplikasi-to-do', label: 'To-Do & Produktivitas' },
 ];
 
 export const GALERI_LAIN = GALERI.filter((g) => g.path !== 'website-reservasi');
@@ -41,3 +41,13 @@ export const LANJUT = [
   { href: `${PINTUWEB}/services/website-custom`, label: 'Jasa website custom & aplikasi web' },
   { href: `${PINTUWEB}/demo#reservasi`, label: 'Semua demo PintuWeb' },
 ];
+
+/** Artikel pendamping di PintuWeb ("Baca juga"). */
+export const BACA_JUGA = [
+  { href: `${PINTUWEB}/artikel/sistem-booking-online`, label: 'Sistem booking online: kapan perlu dan biayanya' },
+];
+
+/** Jenis layanan untuk pesan WhatsApp dan label tombol. */
+export const JENIS = 'sistem reservasi online';
+export const MULAI_WAKTU = `mulai ${PAKET.mulai} · ${PAKET.waktu}`;
+export const LOGO = '/website-reservasi/logo-pintuweb.png';
