@@ -26,6 +26,7 @@ export const PAKET = {
 /** Galeri yang tayang di www.pintuweb.id/<path> (lihat lib/portals.ts di PintuWeb). Urutan dan label sama di semua portal. */
 export const GALERI = [
   { path: 'landing-page', label: 'Landing Page' },
+  { path: 'website-company-profile', label: 'Company Profile' },
   { path: 'toko-online', label: 'Toko Online' },
   { path: 'aplikasi-mobile', label: 'Aplikasi Mobile' },
   { path: 'menu-digital', label: 'Menu Digital' },
