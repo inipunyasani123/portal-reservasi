@@ -56,7 +56,7 @@ export function BilahLengket({ waHref }) {
   }, []);
 
   return (
-    <div className={`fixed inset-x-0 bottom-0 z-40 border-t-2 border-kremr/30 bg-navy px-3 pt-2.5 transition duration-300 md:hidden ${tampil ? 'translate-y-0' : 'invisible translate-y-full'}`} style={{ paddingBottom: 'calc(0.625rem + env(safe-area-inset-bottom))' }}>
+    <div role="region" aria-label="Aksi cepat" className={`fixed inset-x-0 bottom-0 z-40 border-t-2 border-kremr/30 bg-navy px-3 pt-2.5 transition duration-300 md:hidden ${tampil ? 'translate-y-0' : 'invisible translate-y-full'}`} style={{ paddingBottom: 'calc(0.625rem + env(safe-area-inset-bottom))' }}>
       <div className="mx-auto flex max-w-md gap-2">
         <a href="#tiket" className="inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-lg border-2 border-kremr px-3 font-display text-sm font-bold uppercase tracking-wide text-kremr">
           <Ticket size={15} aria-hidden="true" /> Lihat demo
